@@ -1,0 +1,353 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Google Fonts are loaded in index.html ─── */
+
+/* ─── CSS Variables ─── */
+:root {
+  --brand: #6366f1;
+  --brand-light: #818cf8;
+  --accent-cyan: #22d3ee;
+  --accent-vio: #8b5cf6;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* ─── Base Reset ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  font-family: "DM Sans", sans-serif;
+}
+
+body {
+  @apply bg-dark-950 text-slate-100 antialiased overflow-x-hidden;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.light body,
+html.light body {
+  @apply bg-slate-50 text-slate-900;
+}
+
+/* ─── Custom Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0d1424;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #6366f1, #8b5cf6);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #818cf8;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: rgba(99, 102, 241, 0.3);
+  color: #ffffff;
+}
+
+/* ─── Glassmorphism ─── */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-card {
+  background: rgba(13, 20, 36, 0.7);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.light .glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.1);
+}
+
+/* ─── Gradient Text ─── */
+.gradient-text {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #22d3ee 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+}
+
+.gradient-text-amber {
+  background: linear-gradient(135deg, #f59e0b 0%, #f43f5e 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ─── Animated Gradient Background ─── */
+.gradient-bg {
+  background: linear-gradient(-45deg, #020309, #070b14, #0d1424, #131c30);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+.light .gradient-bg {
+  background: linear-gradient(-45deg, #f8fafc, #eef2ff, #f0f9ff, #faf5ff);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ─── Glow Effects ─── */
+.glow-brand {
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
+}
+.glow-cyan {
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.4);
+}
+.glow-violet {
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
+}
+
+/* ─── Noise Texture Overlay ─── */
+.noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Section Base ─── */
+.section-padding {
+  @apply py-20 md:py-28 px-4 md:px-8;
+}
+
+/* ─── Skill Bar ─── */
+.skill-bar {
+  @apply h-2 rounded-full bg-dark-600 overflow-hidden;
+}
+.skill-fill {
+  @apply h-full rounded-full bg-gradient-to-r from-brand-500 to-accent-violet;
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── Project Card Tilt ─── */
+.card-tilt {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+.card-tilt:hover {
+  transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) scale(1.02);
+}
+
+/* ─── Timeline ─── */
+.timeline-line {
+  background: linear-gradient(to bottom, #6366f1, #8b5cf6, #22d3ee);
+}
+
+/* ─── Button Shimmer ─── */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shimmer 2.5s linear infinite;
+}
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+/* ─── Typing Cursor ─── */
+.typing-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1.2em;
+  background: #6366f1;
+  margin-left: 4px;
+  vertical-align: middle;
+  border-radius: 1px;
+  animation: cursorBlink 1s step-end infinite;
+}
+@keyframes cursorBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ─── Floating Orbs ─── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* ─── Particles Canvas ─── */
+#particles-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* ─── Nav Link Underline ─── */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  border-radius: 1px;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* ─── Contact Form ─── */
+.form-input {
+  @apply w-full bg-dark-700 border border-dark-500 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-all duration-200;
+  background: rgba(19, 28, 48, 0.8);
+}
+.light .form-input {
+  @apply bg-white border-slate-200 text-slate-900 placeholder-slate-400;
+}
+.form-input:focus {
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* ─── Badge ─── */
+.tech-badge {
+  @apply text-xs font-mono px-2 py-1 rounded-md border;
+  background: rgba(99, 102, 241, 0.1);
+  border-color: rgba(99, 102, 241, 0.25);
+  color: #a5b4fc;
+}
+
+/* ─── Scroll Progress Bar ─── */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6, #22d3ee);
+  z-index: 9999;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.6);
+}
+
+/* ─── Custom Cursor ─── */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: #6366f1;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+  transform: translate(-50%, -50%);
+}
+.cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid rgba(99, 102, 241, 0.6);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transition:
+    transform 0.15s ease,
+    width 0.2s ease,
+    height 0.2s ease,
+    border-color 0.2s ease;
+  transform: translate(-50%, -50%);
+}
+.cursor-ring.hovered {
+  width: 48px;
+  height: 48px;
+  border-color: rgba(99, 102, 241, 1);
+  background: rgba(99, 102, 241, 0.05);
+}
+
+/* ─── Light Mode Overrides ─── */
+.light {
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(99, 102, 241, 0.15);
+}
+.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+/* ─── Responsive Grid ─── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ─── Preloader ─── */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #020309;
+}
