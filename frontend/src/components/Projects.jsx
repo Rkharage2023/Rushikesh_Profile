@@ -192,7 +192,7 @@ export default function Projects() {
           transition={{ delay: 0.6 }}
         >
           <a
-            href="https://github.com/rushikesh"
+            href="https://github.com/Rkharage2023?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 glass px-6 py-3 rounded-2xl dark:text-slate-300 text-slate-700 font-medium hover:text-brand-400 border border-white/10 hover:border-brand-500/30 transition-all"

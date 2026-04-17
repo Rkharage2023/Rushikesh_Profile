@@ -2,16 +2,16 @@
 
 export const personal = {
   name: "Rushikesh",
-  fullName: "Rushikesh Patil",
+  fullName: "Rushikesh Kharage",
   role: "Software Engineer",
   tagline:
     "Building intelligent systems at the intersection of Web, AI & Blockchain.",
   bio: `I'm a final-year Computer Science Engineering student at D.K.T.E. Society's Textile and Engineering Institute, Ichalkaranji — passionate about building production-grade systems that solve real-world problems. I specialize in Full Stack development with React & Node.js, Machine Learning integration, and Blockchain-based traceability.`,
   bio2: `When I'm not writing code, I'm exploring new tech stacks, contributing to research projects, or studying AI/ML architectures deep into the night. I believe software is most powerful when it's fast, transparent, and built with care.`,
   location: "Ichalkaranji, Maharashtra, India",
-  email: "rushikesh@example.com",
-  github: "https://github.com/rushikesh",
-  linkedin: "https://linkedin.com/in/rushikesh",
+  email: "rushikeshkharage04@gmail.com",
+  github: "https://github.com/Rkharage2023?tab=repositories",
+  linkedin: "https://www.linkedin.com/in/rushikeshkharage/",
   twitter: "https://twitter.com/rushikesh",
   resumeUrl: "/resume.pdf",
   available: true,
@@ -59,65 +59,90 @@ export const skills = {
 export const projects = [
   {
     id: 1,
-    title: "MRLSentinel",
-    subtitle: "Digital Farm Management System",
+    title: "Apartment Management System",
+
+    subtitle: "Smart AI-Driven Apartment & Resident Management Platform",
+
     description:
-      "An AI-powered platform for monitoring antimicrobial usage and MRL (Maximum Residue Level) compliance in livestock farming. Uses Random Forest ML for risk prediction and Ethereum blockchain for immutable traceability of treatment records.",
+      "A smart apartment management platform for handling residents, maintenance, and operations with efficiency and ease.",
+
     image:
-      "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&q=80",
-    tech: [
-      "React.js",
-      "Node.js",
-      "MongoDB",
-      "Scikit-learn",
-      "Ethereum",
-      "Hyperledger",
-    ],
-    live: "https://mrlsentinel.demo",
-    github: "https://github.com/rushikesh/mrlsentinel",
+      "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=1920&q=100",
+
+    tech: ["React.js", "Node.js", "MongoDB", "Express.js", "JWT"],
+
+    live: "https://apartment-frontend-alpha.vercel.app/login",
+
+    github: "https://github.com/Rkharage2023/Apartment_Management_System",
+
     featured: true,
+
     color: "#10b981",
   },
   {
     id: 2,
-    title: "Online Ticket Booking System",
-    subtitle: "Full Stack Event Platform",
+    title: "Online Learning Platform",
+
+    subtitle: "Full-Stack E-Learning Platform with Interactive Courses",
+
     description:
-      "A full-featured event ticket booking platform with real-time seat selection, secure payments, QR-based digital tickets, and an admin dashboard for event management and analytics.",
+      "A modern e-learning platform offering course management, secure authentication, and a seamless learning experience for students and instructors.",
+
     image:
-      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80",
+      "https://images.unsplash.com/photo-1513258496099-48168024aec0?w=1920&q=100",
+
     tech: ["React.js", "Node.js", "Express", "MongoDB", "Stripe API", "JWT"],
-    live: "https://ticketbooking.demo",
-    github: "https://github.com/rushikesh/ticket-booking",
+
+    live: "https://e-learn-project-ten.vercel.app/",
+
+    github: "https://github.com/Rkharage2023/E-Learn-Project",
+
     featured: true,
+
     color: "#6366f1",
   },
   {
     id: 3,
-    title: "DevConnect",
-    subtitle: "Developer Networking Platform",
+    title: "E-Commerce Platform",
+
+    subtitle: "Full-Stack Online Shopping Platform",
+
     description:
-      "A LinkedIn-style platform built for developers — create profiles, post updates, follow peers, and get matched with collaborators based on tech stack similarity.",
+      "A modern e-commerce platform featuring product browsing, cart management, and secure checkout for a smooth online shopping experience.",
+
     image:
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80",
+      "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=1920&q=100",
+
     tech: ["React.js", "Node.js", "MongoDB", "Socket.io", "Tailwind CSS"],
-    live: "https://devconnect.demo",
-    github: "https://github.com/rushikesh/devconnect",
+
+    live: "https://eproductsplatform.netlify.app/",
+
+    github: "https://github.com/Rkharage2023/E-commerce-Platform",
+
     featured: false,
+
     color: "#8b5cf6",
   },
   {
     id: 4,
-    title: "SmartExpense AI",
-    subtitle: "AI-Powered Budget Tracker",
+    title: "PhotoGuard App",
+
+    subtitle: "AI-Powered Image Privacy & Protection Tool",
+
     description:
-      "An expense tracker that uses ML clustering to auto-categorize transactions and provides natural-language spending insights. Integrates with bank export CSVs.",
+      "An AI-based application that detects sensitive content in images and enhances privacy through intelligent analysis and protection features.",
+
     image:
-      "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=80",
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&q=100",
+
     tech: ["React.js", "Python", "FastAPI", "PostgreSQL", "Scikit-learn"],
-    live: "https://smartexpense.demo",
-    github: "https://github.com/rushikesh/smart-expense",
+
+    live: "https://photoguard.netlify.app/",
+
+    github: "https://github.com/Rkharage2023/PhotoGuardApp",
+
     featured: false,
+
     color: "#f59e0b",
   },
   {
@@ -156,7 +181,7 @@ export const timeline = [
     type: "education",
     title: "B.E. in Computer Science Engineering",
     org: "D.K.T.E. Society's Textile and Engineering Institute, Ichalkaranji",
-    desc: "Final-year student. CGPA: 8.6 / 10. Final project: MRLSentinel — Digital Farm Management System with ML & Blockchain.",
+    desc: "Final-year student. CGPA: 7.9 / 10. Final project: MRLSentinel — Digital Farm Management System with ML & Blockchain.",
     icon: "🎓",
   },
   {
