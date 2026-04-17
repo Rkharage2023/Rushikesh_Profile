@@ -100,7 +100,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t dark:border-dark-600 border-slate-200 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs dark:text-slate-500 text-slate-400 font-mono">
-            © {year} Rushikesh Patil. All rights reserved.
+            © {year} Rushikesh Kharage. All rights reserved.
           </p>
           <p className="text-xs dark:text-slate-500 text-slate-400 flex items-center gap-1.5">
             Crafted with{" "}
